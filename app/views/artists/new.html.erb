@@ -1,0 +1,11 @@
+<div class='container' >
+<h1> Add Artist</h1>
+<%= form_for @artist do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, required: true, autofocus: true %>
+  <br />
+  <%= f.submit class: 'btn btn-success' %>
+<% end %>
+<br />
+<%= link_to 'Back to all Artists', artists_path, class: 'btn btn-primary' %>
+</div>

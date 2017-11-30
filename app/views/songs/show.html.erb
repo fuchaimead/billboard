@@ -1,0 +1,7 @@
+<% if @song.any? %>
+  <% @song.each do |song| %> 
+    <%= link_to song.name %>
+    <% end %>
+<% else %>
+  <h4> No songs have been added </h4>
+    <% end %>

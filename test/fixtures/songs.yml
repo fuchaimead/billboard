@@ -2,6 +2,8 @@
 
 one:
   title: MyString
+  chart: one
 
 two:
   title: MyString
+  chart: two

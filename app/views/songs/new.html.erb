@@ -1,12 +1,12 @@
 <div class='container' >
 <h1> Add Song </h1>
-<%= form_for [@artist, @song] do |f| %>
+<%= form_for [@chart, @song] do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title, required: true, autofocus: true %>
   <br />
   <%= f.submit class: 'btn btn-success'%>
 <% end %>
 <br />
-<%= link_to 'Back to Artist', artist_path(@artist), class: 'btn btn-primary' %>
-<%= link_to 'Back to All Artists', artists_path, class: 'btn btn-primary' %>
+<%= link_to 'Back to Songs', chart_songs_path(@chart), class: 'btn btn-primary' %>
+<%= link_to 'Back to Chart', charts_path, class: 'btn btn-primary' %>
 </div>

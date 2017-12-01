@@ -1,0 +1,22 @@
+<div class='container' >
+<h1>List of Songs</h1>
+<hr />
+
+
+<% if @songs.any? %>
+  <% @songs.each do |song| %> 
+   <ul>
+   <li>
+   <h4> <%= link_to song.title, chart_song_path(@chart, song), class: 'bg-success' %>  <h4>
+    </li>
+   </ul>
+    <% end %>
+  <% else %>
+  <h4> No Artists have been added </h4>
+  <% end %>
+
+
+  <%= link_to 'Add New Song', new_chart_song_path(@chart), class: 'btn btn-primary' %>
+   <%= link_to 'Back to Charts', charts_path, class: 'btn btn-primary' %>
+ 
+</div>

@@ -1,5 +1,6 @@
 <div class='container' >
 <h1>Songs by: <%= @artist.name %> </h1>
+<hr />
 
 <% if @artist.songs.any? %>
 <table>
@@ -14,11 +15,10 @@
    <h4> <%= song.title %> </h4>
   </td>
   <td>
-    <%= link_to 'edit', edit_artist_song_path([@artist, @song]) %>
+    <%= link_to 'edit', edit_artist_song_path(@artist, song)%>
     </td>
   <td>
-    <center> <%= link_to 'delete', [@artist, @song] , method: :delete, 
-              data: {confirm: 'Are you sure you want to delete?'}   %>  </center>
+    <center> <%= link_to 'delete', artist_song_path(@artist, song), method: :delete %>  </center>
   </td>
    </tr>
     <% end %>

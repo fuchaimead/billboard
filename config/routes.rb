@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
-root 'artists#index'
+root 'charts#index'
 
-resources :artists do 
+resources :charts do 
   resources :songs
 end
 
+scope 'songs/:song_id', as: 'song' do
+  resources :artists
+end
 
 
 end

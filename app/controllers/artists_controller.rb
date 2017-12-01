@@ -11,15 +11,15 @@ class ArtistsController < ApplicationController
   end
 
   def index
-    @artist = Artist.all
+    @artist = @song.artist.all
   end
 
   def new
-    @artist = Artist.new 
+    @artist = @song.artist.new 
   end
   
   def create
-    @artist = Artist.new(artist_params)
+    @artist = @song.artist.new(artist_params)
     if @artist.save
       redirect_to artists_path
     else

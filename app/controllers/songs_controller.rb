@@ -1,18 +1,23 @@
 class SongsController < ApplicationController
   before_action :set_song, only: [:show, :update, :edit, :destroy]
-  before_action :set_artist
+  before_action :set_chart
+
+  def index
+    @songs = @chart.songs.all
+  end
 
   def show
+    
   end
 
   def new
-    @song = Song.new
+    @song = @chart.songs.new
   end
 
   def create
-    @song = @artist.songs.new(song_params)
+    @song = @chart.songs.new(song_params)
     if @song.save
-      redirect_to artist_path(@artist)
+      redirect_to chart_songs_path
     else
       render :new
     end
@@ -20,7 +25,7 @@ class SongsController < ApplicationController
 
   def update
     if @song.update(song_params)
-      redirect_to artist_song_path(@artist, @song)
+      redirect_to artist_song_path(@song)
     else
       render :edit
     end
@@ -32,12 +37,12 @@ class SongsController < ApplicationController
   
   def destroy
     @song.destroy
-    redirect_to artist_songs_path
+    redirect_to chart_path(@chart)
   end
 
   private
-  def set_artist
-   @artist = Artist.find(params[:artist_id])
+  def set_chart
+   @chart = Chart.find(params[:chart_id])
   end
 
   def set_song
@@ -45,7 +50,7 @@ class SongsController < ApplicationController
   end 
 
   def song_params
-    params.require(:song).permit(:title)
+    params.require(:song).permit(:title, :chart_id)
   end 
 
 end

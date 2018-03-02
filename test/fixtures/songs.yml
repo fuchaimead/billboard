@@ -3,7 +3,9 @@
 one:
   title: MyString
   chart: one
+  artist: one
 
 two:
   title: MyString
   chart: two
+  artist: two

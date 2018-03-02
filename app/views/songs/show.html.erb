@@ -1,2 +1,2 @@
-<h4> <%= @song.title %> </h4>
-
+<h1> <%= @song.title %> by <%= @song.artist.name %></h1>
+<%= link_to 'edit', edit_chart_song_path([@chart, @song]), class: 'btn btn-warning' %>

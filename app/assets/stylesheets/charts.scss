@@ -1,0 +1,22 @@
+// Place all the styles related to the charts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.white {
+  background-color:rgba(255, 255, 255, .7);
+  padding: 5%;
+}
+
+ul.nav li a, ul.nav li a:visited {
+  color: white !important;
+}
+
+ul.nav li a:hover, ul.nav li a:active {
+  color: black !important;
+}
+
+ul.nav li.active a {
+  color: white !important;
+}

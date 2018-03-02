@@ -9,5 +9,4 @@ scope 'songs/:song_id', as: 'song' do
   resources :artists
 end
 
-
 end

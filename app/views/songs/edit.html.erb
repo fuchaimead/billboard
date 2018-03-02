@@ -1,2 +1,13 @@
-<h1>Songs#edit</h1>
-<p>Find me in app/views/songs/edit.html.erb</p>
+<h4> Editing <%= @song.title %> </h4>
+<div class='white'>
+<%= form_for [@chart, @song] do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, required: true, autofocus: true %>
+  <br />
+  <%= f.submit class: 'btn btn-success'%>
+<% end %>
+<br />
+<%= link_to 'Home', charts_path, class: 'btn btn-primary' %>
+<%= link_to 'Back to Chart', chart_songs_path(@chart), class: 'btn btn-primary' %>
+</div>
+

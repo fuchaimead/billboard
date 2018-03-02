@@ -3,11 +3,11 @@ class SongsController < ApplicationController
   before_action :set_chart
 
   def index
-    @songs = @chart.songs.all
+    @songs = @chart.songs.all 
   end
 
   def show
-    
+
   end
 
   def new
@@ -25,7 +25,7 @@ class SongsController < ApplicationController
 
   def update
     if @song.update(song_params)
-      redirect_to artist_song_path(@song)
+      redirect_to chart_songs_path(@chart)
     else
       render :edit
     end

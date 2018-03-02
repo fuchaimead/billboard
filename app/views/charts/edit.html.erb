@@ -1,0 +1,12 @@
+<h4> Editing <%= @song.title %> </h4>
+<div class='white'>
+<%= form_for @chart do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, required: true, autofocus: true %>
+  <br />
+  <%= f.submit class: 'btn btn-success'%>
+<% end %>
+<br />
+<%= link_to 'Back to Songs', chart_songs_path(@chart), class: 'btn btn-primary' %>
+<%= link_to 'Back to Chart', charts_path, class: 'btn btn-primary' %>
+</div>

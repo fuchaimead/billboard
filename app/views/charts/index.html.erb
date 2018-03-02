@@ -1,0 +1,12 @@
+
+<h1> Top Billboards of 2017</h1>
+<hr />
+<div class='white' class='nav-link'>
+  <% @charts.each do |chart| %> 
+   <h4> <%= link_to chart.name, chart_songs_path(chart) %> </h4>
+ <% end %>
+</div>
+
+ 
+
+

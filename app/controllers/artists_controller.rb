@@ -1,6 +1,16 @@
 class ArtistsController < ApplicationController
   before_action :set_artist, only: [:show, :update, :edit, :destroy]
 
+ 
+
+  def index
+    @artists = Artist.all
+  end
+
+  def new
+    @artist = @song.artist.new 
+  end
+
   def show
   end
 
@@ -8,14 +18,6 @@ class ArtistsController < ApplicationController
   end
 
   def update
-  end
-
-  def index
-    @artist = @song.artist.all
-  end
-
-  def new
-    @artist = @song.artist.new 
   end
   
   def create
@@ -26,8 +28,6 @@ class ArtistsController < ApplicationController
       render :new
     end
   end 
-
-
 
   def destroy
     @artist.destroy
@@ -41,7 +41,7 @@ class ArtistsController < ApplicationController
   end
 
   def set_artist
-    @artist = Artist.find(params[:id])
+    @artist = Songs.artist.find(params[:id])
   end 
   
 end

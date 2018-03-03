@@ -1,9 +1,9 @@
 class SongsController < ApplicationController
   before_action :set_song, only: [:show, :update, :edit, :destroy]
-  before_action :set_chart
+  before_action :set_artist
 
   def index
-    @songs = @chart.songs.all 
+    @songs = @artist.songs
   end
 
   def show
@@ -11,13 +11,13 @@ class SongsController < ApplicationController
   end
 
   def new
-    @song = @chart.songs.new
+    @song = @artist.songs.new
   end
 
   def create
-    @song = @chart.songs.new(song_params)
+    @song = @artist.songs.new(song_params)
     if @song.save
-      redirect_to chart_songs_path
+      redirect_to artist_songs_path
     else
       render :new
     end
@@ -25,7 +25,7 @@ class SongsController < ApplicationController
 
   def update
     if @song.update(song_params)
-      redirect_to chart_songs_path(@chart)
+      redirect_to artist_songs_path(@artist)
     else
       render :edit
     end
@@ -41,8 +41,8 @@ class SongsController < ApplicationController
   end
 
   private
-  def set_chart
-   @chart = Chart.find(params[:chart_id])
+  def set_artist
+   @artist = Artist.find(params[:artist_id])
   end
 
   def set_song

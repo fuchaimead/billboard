@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
 root 'charts#index'
+resources :charts 
 
-resources :charts do 
+put "/chart_songs", to: "charts#chart_songs", as: :chart_songs
+get "/charts/:id/add_songs", to: "charts#add_songs", as: :add_songs
+resources :artists do
   resources :songs
 end
 
-scope 'songs/:song_id', as: 'song' do
-  resources :artists
 end
 
-end

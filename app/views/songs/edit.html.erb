@@ -1,4 +1,4 @@
-<h4> Editing <%= @song.title %> </h4>
+<h4> Editing: <%= @song.title %> by <%= @song.artist.name %> </h4>
 <div class='white'>
 <%= form_for [@chart, @song] do |f| %>
   <%= f.label :title %>

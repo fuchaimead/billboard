@@ -1,0 +1,8 @@
+<h4>Add a New Chart</h4>
+<%= form_for @chart do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, required: true, autofocus: true %>
+  <br />
+  <%= f.submit class: 'btn btn-success'%>
+  <%= link_to 'Cancel', charts_path, class: 'btn btn-primary' %>
+<% end %>

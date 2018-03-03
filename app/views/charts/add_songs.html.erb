@@ -1,0 +1,17 @@
+ <h3>Select a the songs you want to add:</h3>
+    <table>
+    <%= form_tag(chart_songs_path, method: :put) do %>
+          <%= hidden_field_tag "id", @chart.id %>
+    <% @all_available_songs.each_with_index do |song, i| %> 
+      <tr>
+        <td><%= i += 1 %> </td>
+        <td> <h4> <%= song.title %> <%= check_box_tag "song_ids[]", song.id, false %> </h4></td>
+    </tr>
+      <% end %>
+    </table>
+    <%= submit_tag "Add Songs", class: 'btn btn-primary'%>
+  <% end %>
+
+
+
+  

@@ -3,8 +3,10 @@
 <hr />
 <div class='white' class='nav-link'>
   <% @charts.each do |chart| %> 
-   <h4> <%= link_to chart.name, chart_songs_path(chart) %> </h4>
+   <h4> <%= link_to chart.name, chart %> </h4>
  <% end %>
+ <%= link_to 'Add Chart', new_chart_path, class: 'btn btn-primary' %>
+ <%= link_to 'View Artists', artists_path, class: 'btn btn-primary' %>
 </div>
 
  

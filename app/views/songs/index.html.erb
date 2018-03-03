@@ -1,6 +1,6 @@
 <div class='container' >
 
-<h1>List of Songs</h1>
+<h1>List of Songs by <%= @artist.name %></h1>
 <hr />
 <div class='white'>
 <% if @songs.any? %>
@@ -8,7 +8,7 @@
   <% @songs.each_with_index do |song, i| %> 
     <tr>
       <td><%= i += 1 %> </td>
-      <td> <h4> <%= link_to song.title, edit_chart_song_path(@chart, song) %> 
+      <td> <h4> <%= link_to song.title, edit_artist_song_path(@artist, song) %> 
         </h4></td>
    </tr>
     <% end %>
@@ -19,8 +19,6 @@
   </div>
 
 
-<%= link_to 'view artists', song_artists_path(@songs), class: 'btn btn-primary' %>
-  <!-- <%= link_to 'View', new_chart_song_path(@chart), class: 'btn btn-primary' %> -->
    <%= link_to 'Back to Charts', charts_path, class: 'btn btn-primary' %>
  
 </div>

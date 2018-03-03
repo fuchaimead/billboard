@@ -1,0 +1,26 @@
+<div class='container' >
+
+<h1><%= @chart.name %></h1>
+<hr />
+<div class='white'>
+<% if @selected_songs.any? %>
+  <table>
+  <% @selected_songs.each_with_index do |song, i| %> 
+    <tr>
+      <td><%= i += 1 %> </td>
+      <td> <h4> <%= song.title %> 
+        </h4></td>
+   </tr>
+    <% end %>
+  </table>
+  <% else %>
+  <h4> No songs have been added </h4>
+  <% end %>
+  </div>
+
+
+<%= link_to 'Add Songs', add_songs_path(@chart), class: 'btn btn-primary' %>
+<%= link_to 'Delete Chart', chart_path, method: :delete, class: 'btn btn-primary' %>
+<%= link_to 'Back to Charts', charts_path, class: 'btn btn-primary' %>
+ 
+</div>
